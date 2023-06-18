@@ -2,6 +2,7 @@
 import React from "react";
 import { RiAddFill } from "react-icons/ri";
 import { useState } from "react";
+import { mutate } from "swr";
 
 function TodoInput() {
   const [todo, setTodo] = useState("");
@@ -12,6 +13,22 @@ function TodoInput() {
     personal: false,
     leisure: true,
   });
+
+  const createTodo = async () => {
+    if (!todo) {
+      alert("Digite algo!");
+      return;
+    }
+    await fetch("/api/todo", {
+      method: "POST",
+      body: JSON.stringify({
+        title: todo,
+        category: category,
+      }),
+    });
+    setTodo("");
+    mutate("/api/todo");
+  };
 
   const handleSeted = (e) => {
     setCategory(e.target.id);
@@ -36,7 +53,7 @@ function TodoInput() {
           onChange={(e) => setTodo(e.target.value)}
         />
         <button className="hover:bg-nextGreen rounded-full ml-1 p-2">
-          <RiAddFill className="text-2xl" />
+          <RiAddFill onClick={createTodo} className="text-2xl" />
         </button>
       </div>
       <div className="flex justify-between mt-2">
