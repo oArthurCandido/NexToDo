@@ -1,10 +1,13 @@
-import Image from "next/image";
-import LoginBtn from "@/components/LoginBtn";
+import Nav from "@/components/Nav";
+import TodoInput from "@/components/TodoInput";
+import TodoList from "@/components/TodoList";
 
 export default function Home() {
   return (
     <div>
-      <LoginBtn />
+      <Nav />
+      <TodoInput />
+      <TodoList />
     </div>
   );
 }
