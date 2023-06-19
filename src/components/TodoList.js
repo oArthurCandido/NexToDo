@@ -59,7 +59,7 @@ function TodoList() {
             <span
               className={`${
                 todo.completed ? "line-through" : ""
-              } ml-2 w-56 sm:w-96 break-words`}
+              } ml-2 w-56 sm:w-80 break-words`}
             >
               {todo.title}
             </span>
