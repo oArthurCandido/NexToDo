@@ -1,15 +1,11 @@
 "use client";
 import React from "react";
-import { useState } from "react";
 import { BsTrash } from "react-icons/bs";
-import { RiEditLine } from "react-icons/ri";
 import useSWR, { mutate } from "swr";
 
 const fetcher = (url) => fetch(url).then((r) => r.json());
 
 function TodoList() {
-  const [checked, setChecked] = useState(false);
-  const [todos, setTodos] = useState(["todo1", "todo2", "todo3", "todo4"]);
   const { data, error } = useSWR("/api/todo", fetcher);
 
   const category = {
@@ -48,7 +44,7 @@ function TodoList() {
           id="todoBox"
           className="mt-2 p-2 border w-full flex items-center rounded-md border-gray-500 justify-between"
         >
-          <div className="flex items-center mr-4 ">
+          <div className="flex items-center mr-4  ">
             <input
               checked={todo.completed}
               id="green-checkbox"
@@ -56,11 +52,15 @@ function TodoList() {
               value=""
               className={` ${
                 todo.completed ? "bg-nextGreen" : ""
-              } rounded-full border border-gray-500 w-4 h-4 appearance-none `}
+              } rounded-full border border-gray-500 w-6 h-6 appearance-none `}
               onChange={() => completedToggle(index, todo.id)}
             />
 
-            <span className={`${todo.completed ? "line-through" : ""} ml-2`}>
+            <span
+              className={`${
+                todo.completed ? "line-through" : ""
+              } ml-2 w-56 sm:w-80 break-words`}
+            >
               {todo.title}
             </span>
           </div>

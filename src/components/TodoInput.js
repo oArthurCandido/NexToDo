@@ -66,48 +66,48 @@ function TodoInput() {
         </button>
       </div>
       <div className="flex justify-between mt-2 ">
-        <div>
+        <div className="flex items-center">
           <input
             id="work"
             type="radio"
             className={`${
               seted.work ? "border-2 " : ""
-            } appearance-none w-3 h-3 bg-nextGreen rounded-full mr-2 border-gray-500 dark:border-gray-200`}
+            } appearance-none w-5 h-5 bg-nextGreen rounded-full mr-2 border-gray-500 dark:border-gray-200`}
             onChange={(e) => handleSeted(e)}
             name="category"
           />
           <span>Trabalho</span>
         </div>
-        <div>
+        <div className="flex items-center">
           <input
             id="study"
             className={`${
               seted.study ? "border-2 " : ""
-            } appearance-none w-3 h-3 bg-nextred  rounded-full mr-2 border-gray-500 dark:border-gray-200`}
+            } appearance-none w-5 h-5 bg-nextred  rounded-full mr-2 border-gray-500 dark:border-gray-200`}
             type="radio"
             name="category"
             onChange={(e) => handleSeted(e)}
           />
           <span>Estudo</span>
         </div>
-        <div>
+        <div className="flex items-center">
           <input
             id="personal"
             className={`${
               seted.personal ? "border-2 " : ""
-            } appearance-none w-3 h-3 bg-nextBlue rounded-full mr-2 border-gray-500 dark:border-gray-200`}
+            } appearance-none w-5 h-5 bg-nextBlue rounded-full mr-2 border-gray-500 dark:border-gray-200`}
             type="radio"
             name="category"
             onChange={(e) => handleSeted(e)}
           />
           <span>Pessoal</span>
         </div>
-        <div>
+        <div className="flex items-center">
           <input
             id="leisure"
             className={`${
               seted.leisure ? "border-2" : ""
-            } appearance-none w-3 h-3 bg-nextYellow rounded-full mr-2 border-gray-500 dark:border-gray-200`}
+            } appearance-none w-5 h-5 bg-nextYellow rounded-full mr-2 border-gray-500 dark:border-gray-200`}
             type="radio"
             name="category"
             onChange={(e) => handleSeted(e)}
