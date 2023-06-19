@@ -29,6 +29,11 @@ function TodoInput() {
     setTodo("");
     mutate("/api/todo");
   };
+  const handleEnter = (e) => {
+    if (e.code == "Enter") {
+      createTodo();
+    }
+  };
 
   const handleSeted = (e) => {
     setCategory(e.target.id);
@@ -51,19 +56,23 @@ function TodoInput() {
           placeholder="O que você vai fazer hoje?"
           value={todo}
           onChange={(e) => setTodo(e.target.value)}
+          onKeyUp={(e) => handleEnter(e)}
         />
         <button className="hover:bg-nextGreen rounded-full ml-1 p-2">
-          <RiAddFill onClick={createTodo} className="text-2xl" />
+          <RiAddFill
+            onClick={createTodo}
+            className="text-2xl hover:text-white"
+          />
         </button>
       </div>
-      <div className="flex justify-between mt-2">
+      <div className="flex justify-between mt-2 ">
         <div>
           <input
             id="work"
             type="radio"
             className={`${
               seted.work ? "border-2 " : ""
-            } appearance-none w-3 h-3 bg-nextGreen rounded-full mr-2`}
+            } appearance-none w-3 h-3 bg-nextGreen rounded-full mr-2 border-gray-500 dark:border-gray-200`}
             onChange={(e) => handleSeted(e)}
             name="category"
           />
@@ -74,7 +83,7 @@ function TodoInput() {
             id="study"
             className={`${
               seted.study ? "border-2 " : ""
-            } appearance-none w-3 h-3 bg-nextred  rounded-full mr-2`}
+            } appearance-none w-3 h-3 bg-nextred  rounded-full mr-2 border-gray-500 dark:border-gray-200`}
             type="radio"
             name="category"
             onChange={(e) => handleSeted(e)}
@@ -86,7 +95,7 @@ function TodoInput() {
             id="personal"
             className={`${
               seted.personal ? "border-2 " : ""
-            } appearance-none w-3 h-3 bg-nextBlue rounded-full mr-2`}
+            } appearance-none w-3 h-3 bg-nextBlue rounded-full mr-2 border-gray-500 dark:border-gray-200`}
             type="radio"
             name="category"
             onChange={(e) => handleSeted(e)}
@@ -98,7 +107,7 @@ function TodoInput() {
             id="leisure"
             className={`${
               seted.leisure ? "border-2" : ""
-            } appearance-none w-3 h-3 bg-nextYellow rounded-full mr-2`}
+            } appearance-none w-3 h-3 bg-nextYellow rounded-full mr-2 border-gray-500 dark:border-gray-200`}
             type="radio"
             name="category"
             onChange={(e) => handleSeted(e)}

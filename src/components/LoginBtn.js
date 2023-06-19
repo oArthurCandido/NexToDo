@@ -1,6 +1,7 @@
 "use client";
 import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
+import { SlLogin } from "react-icons/sl";
 export default function LoginBtn() {
   const { data: session } = useSession();
   if (session) {
@@ -21,8 +22,9 @@ export default function LoginBtn() {
   }
   return (
     <>
-      Not signed in <br />
-      <button onClick={() => signIn()}>Sign in</button>
+      <button onClick={() => signIn()}>
+        <SlLogin className="text-2xl text-gray-700" />
+      </button>
     </>
   );
 }
