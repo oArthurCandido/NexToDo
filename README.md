@@ -40,7 +40,7 @@ Um CRUD de uma To Do list, criado como forma de estudo de uma aplicação fullst
 
 | Cor               | Hexadecimal                                                |
 | ----------------- | ---------------------------------------------------------------- |
-| Verde       | ![#06D6A0](https://via.placeholder.com/10/06D6A0) #06D6A0 |
+| Verde       | <img src="https://via.placeholder.com/10/06D6A0" width="5px"/> #06D6A0 |
 | Azul      | ![#1B9AAA](https://via.placeholder.com/10/1B9AAA) #1B9AAA |
 | Vermelho       | ![#EF476F](https://via.placeholder.com/10/EF476F) #EF476F |
 | Amarelo       | ![#FFC43D](https://via.placeholder.com/10/FFC43D) #FFC43D |
