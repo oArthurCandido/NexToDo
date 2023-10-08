@@ -51,14 +51,14 @@ function TodoInput() {
     <div>
       <div className="flex mt-2">
         <input
-          className="w-full rounded-md dark:bg-black border border-gray-500 dark:text-gray-200"
+          className="w-full rounded-md dark:bg-black border border-gray-500 dark:text-gray-200 p-2"
           type="text"
           placeholder="O que você vai fazer hoje?"
           value={todo}
           onChange={(e) => setTodo(e.target.value)}
           onKeyUp={(e) => handleEnter(e)}
         />
-        <button className="hover:bg-nextGreen rounded-full ml-1 p-2">
+        <button className="hover:bg-nextGreen rounded-full ml-1 p-3">
           <RiAddFill
             onClick={createTodo}
             className="text-2xl hover:text-white"
